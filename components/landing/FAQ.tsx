@@ -1,47 +1,78 @@
+"use client";
+import { useState } from "react";
+import { Plus } from "lucide-react";
+
 const faqs = [
   {
-    question: "What kinds of assets can Spurb manage first?",
+    question: "Comment l'IA publie mes annonces ?",
     answer:
-      "The initial data model supports garages, driveways, storage spaces, rooms, apartments, gardens, basements, and even compute capacity."
+      "L'agent IA analyse le type de bien que vous déclarez, sa localisation, et les plateformes où la demande est la plus forte. Pour une voiture, il choisit Turo ou Getaround. Pour une chambre, Airbnb. Pour un garage, Neighbor ou Facebook Marketplace. La sélection de plateformes est automatique et ajustée en continu selon les performances."
   },
   {
-    question: "How does owner approval work?",
+    question: "Quels assets sont supportés ?",
     answer:
-      "The screening flow is designed so Spurb summarizes applicants and the owner remains the final decision-maker before a lease starts."
+      "Spurb supporte : garages & allées, voitures inutilisées, chambres & logements, caves & débarras, jardins & terrains, et capacité de calcul (serveurs). D'autres catégories sont en cours d'intégration."
   },
   {
-    question: "Is Stripe already wired end to end?",
+    question: "Comment suis-je payé ?",
     answer:
-      "This initialization includes the server webhook scaffold and Stripe utility layer. Product setup and subscription flows can be added in the next task."
+      "Spurb collecte le paiement directement via la plateforme avant que le locataire accède à votre bien. Vous recevez votre virement uniquement après encaissement effectif. Les virements sont automatiques et mensuels."
   },
   {
-    question: "Can this foundation support live database-backed onboarding?",
+    question: "Et si je veux garder le contrôle ?",
     answer:
-      "Yes. Prisma schema, client setup, and `POST /api/assets` are ready so the onboarding form can be connected to persistence next."
+      "Vous gardez toujours le dernier mot. L'IA Spurb répond aux demandes et filtre les candidats non qualifiés, mais vous êtes notifié pour les décisions importantes : validation d'un locataire, signature d'un contrat, résolution d'un litige. Le reste est automatisé."
+  },
+  {
+    question: "Est-ce légal ?",
+    answer:
+      "Oui. Spurb génère des contrats conformes à la réglementation locale pour chaque type de bien (bail de garage, contrat de location de véhicule, location courte durée…). Les modèles sont mis à jour régulièrement selon l'évolution des lois. Les deux parties signent électroniquement."
   }
 ];
 
 export function FAQ() {
+  const [open, setOpen] = useState<number | null>(null);
+
   return (
-    <section id="faq" className="section-shell mt-20">
-      <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-        <div>
+    <section id="faq" className="section-shell mt-28">
+      <div className="grid gap-14 lg:grid-cols-[1fr_1.6fr]">
+        <div className="lg:sticky lg:top-24">
           <span className="section-kicker">FAQ</span>
-          <h2 className="font-display text-4xl text-white sm:text-5xl">
-            The obvious questions, answered cleanly.
+          <h2 className="font-display text-4xl font-semibold text-white sm:text-5xl">
+            Questions sur l&apos;IA ?{" "}
+            <span className="text-white/45">On répond.</span>
           </h2>
         </div>
-        <div className="space-y-4">
-          {faqs.map((item) => (
-            <details
+
+        <div className="space-y-3">
+          {faqs.map((item, index) => (
+            <div
               key={item.question}
-              className="group rounded-[1.5rem] border border-white/10 bg-white/5 p-6 open:bg-white/8"
+              className="overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03] transition-colors hover:border-violet-500/20"
             >
-              <summary className="cursor-pointer list-none font-display text-2xl text-white">
-                {item.question}
-              </summary>
-              <p className="mt-4 max-w-3xl text-white/68">{item.answer}</p>
-            </details>
+              <button
+                onClick={() => setOpen(open === index ? null : index)}
+                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+              >
+                <span className="font-medium text-white">{item.question}</span>
+                <div
+                  className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-all ${
+                    open === index
+                      ? "border-violet-500/50 bg-violet-500/15 text-violet-400"
+                      : "border-white/15 text-white/40"
+                  }`}
+                >
+                  <Plus
+                    className={`h-3.5 w-3.5 transition-transform ${open === index ? "rotate-45" : ""}`}
+                  />
+                </div>
+              </button>
+              {open === index && (
+                <div className="border-t border-white/8 px-6 pb-5 pt-4">
+                  <p className="text-sm leading-relaxed text-white/55">{item.answer}</p>
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>

@@ -1,50 +1,67 @@
 const assets = [
   {
-    title: "Garages & detached bays",
-    blurb: "High-trust storage inventory with stronger rent potential and longer stays."
+    emoji: "🏠",
+    title: "Garage & Stockage",
+    body: "Transformez votre espace inutilisé en revenu mensuel garanti. Spurb liste sur Neighbor et les plateformes de stockage."
   },
   {
-    title: "Driveways & parking pads",
-    blurb: "Low-friction, fast-launch supply for commuters, overflow parking, and urban events."
+    emoji: "🚗",
+    title: "Voiture inutilisée",
+    body: "Votre voiture dort dans l'allée ? L'IA la déploie sur Turo, Getaround. Assurance, contrats et paiements inclus."
   },
   {
-    title: "Storage rooms & basements",
-    blurb: "Excellent candidates for repeat monthly occupancy in dense neighborhoods."
+    emoji: "🛏",
+    title: "Chambre / Logement",
+    body: "Spurb crée et gère votre annonce Airbnb, règle les disponibilités, répond aux voyageurs et encaisse les réservations."
+  },
+  {
+    emoji: "📦",
+    title: "Cave & Débarras",
+    body: "Même quelques mètres carrés ont de la valeur. L'IA optimise le prix et trouve les bons locataires automatiquement."
+  },
+  {
+    emoji: "🌱",
+    title: "Jardin & Terrain",
+    body: "Location pour événements, potager partagé, stationnement. Spurb explore toutes les options et déploie les annonces."
+  },
+  {
+    emoji: "⚡",
+    title: "Compute / Serveur",
+    body: "De la capacité de calcul inutilisée ? Spurb la connecte aux marketplaces de compute distribué pour des revenus passifs."
   }
 ];
 
 export function AssetCards() {
   return (
-    <section className="section-shell mt-20">
-      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div>
-          <span className="section-kicker">Asset coverage</span>
-          <h2 className="font-display text-4xl text-white sm:text-5xl">
-            Empty square footage is a product line waiting to happen.
-          </h2>
-          <p className="mt-4 max-w-xl text-white/68">
-            Spurb starts with the overlooked categories homeowners already own
-            and already understand.
-          </p>
-        </div>
-        <div className="grid gap-4">
-          {assets.map((asset, index) => (
-            <div
-              key={asset.title}
-              className="grid gap-4 rounded-[1.75rem] border border-white/10 bg-white/5 p-6 sm:grid-cols-[84px_1fr]"
-            >
-              <div className="font-display text-6xl leading-none text-white/18">
-                {index + 1}
-              </div>
-              <div>
-                <h3 className="font-display text-2xl text-white">
-                  {asset.title}
-                </h3>
-                <p className="mt-3 text-white/68">{asset.blurb}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+    <section id="assets" className="section-shell mt-28">
+      <div className="mb-14 text-center">
+        <span className="section-kicker">Assets supportés</span>
+        <h2 className="font-display text-4xl font-semibold text-white sm:text-5xl">
+          Tout ce que vous possédez{" "}
+          <br className="hidden sm:block" />
+          <span className="text-white/45">peut travailler pour vous.</span>
+        </h2>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {assets.map((asset) => (
+          <div
+            key={asset.title}
+            className="card-hover group relative overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03] p-6"
+          >
+            {/* Hover glow */}
+            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 ring-1 ring-inset ring-violet-500/30 transition-opacity group-hover:opacity-100" />
+            <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-violet-500/0 blur-2xl transition-all group-hover:bg-violet-500/15" />
+
+            <div className="mb-4 text-4xl">{asset.emoji}</div>
+            <h3 className="font-display text-lg font-semibold text-white">
+              {asset.title}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-white/48">
+              {asset.body}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );

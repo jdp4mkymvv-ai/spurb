@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Bricolage_Grotesque, IBM_Plex_Sans } from "next/font/google";
+import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({
@@ -8,16 +8,16 @@ const display = Bricolage_Grotesque({
   variable: "--font-display"
 });
 
-const body = IBM_Plex_Sans({
+const body = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-body"
 });
 
 export const metadata: Metadata = {
-  title: "Spurb | Earn passive income from unused space",
+  title: "Spurb — Vos biens inutilisés rapportent de l'argent. Automatiquement.",
   description:
-    "Spurb lists your unused garage, driveway, or storage space, screens tenants, generates leases, and collects recurring rent."
+    "Spurb est l'agent IA qui liste, gère, contractualise et encaisse à votre place. Garage, voiture, chambre, jardin, serveur. Commission de 15% sur les revenus générés, sans frais fixes."
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="fr" className={`${display.variable} ${body.variable}`}>
       <head>
         <Script
           src="https://phospho-nanocorp-prod--nanocorp-api-fastapi-app.modal.run/analytics/v1.js?c=53c02381-eea2-4ffc-a311-4078d1054894"

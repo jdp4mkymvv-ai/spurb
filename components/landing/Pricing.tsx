@@ -1,80 +1,92 @@
-import { Badge } from "@/components/ui/badge";
+"use client";
+import Link from "next/link";
+import { Check, ArrowRight } from "lucide-react";
 
-const tiers = [
-  {
-    name: "Free to list",
-    price: "$0",
-    description: "Best for owners testing demand before committing to full service.",
-    features: [
-      "Initial asset intake",
-      "Listing-ready asset record",
-      "Basic launch workflow"
-    ]
-  },
-  {
-    name: "Spurb Standard",
-    price: "10%",
-    description: "Hands-off operations once the asset is rented.",
-    features: [
-      "Listing and inquiry management",
-      "Tenant screening summaries",
-      "Lease generation and payment tracking"
-    ],
-    featured: true
-  },
-  {
-    name: "Spurb Pro",
-    price: "8%",
-    description: "Reserved for owners managing several spaces.",
-    features: [
-      "Portfolio reporting",
-      "Priority listing review",
-      "Dedicated operational support"
-    ]
-  }
+const included = [
+  "Publication automatique sur toutes les plateformes",
+  "Optimisation du prix en temps réel",
+  "Filtrage et vérification des locataires",
+  "Génération de contrats et e-signatures",
+  "Collecte des paiements et virements automatiques",
+  "Tableau de bord de suivi des revenus",
+  "Support IA disponible 24h/24"
 ];
 
 export function Pricing() {
   return (
-    <section id="pricing" className="section-shell mt-20">
-      <div className="mb-10">
-        <span className="section-kicker">Pricing</span>
-        <h2 className="font-display text-4xl text-white sm:text-5xl">
-          Free to list. We only win when you do.
+    <section id="pricing" className="section-shell mt-28">
+      <div className="mb-14 text-center">
+        <span className="section-kicker">Tarifs</span>
+        <h2 className="font-display text-4xl font-semibold text-white sm:text-5xl">
+          Aucun frais fixe.{" "}
+          <span className="text-white/45">On gagne quand vous gagnez.</span>
         </h2>
-        <p className="mt-4 max-w-3xl text-white/68">
-          The product surface is positioned around aligned incentives: owner
-          revenue first, Spurb fee second.
-        </p>
       </div>
-      <div className="grid gap-5 lg:grid-cols-3">
-        {tiers.map((tier) => (
-          <div
-            key={tier.name}
-            className={`rounded-[1.9rem] border p-6 ${
-              tier.featured
-                ? "border-[#f26f25]/40 bg-[#f26f25]/10 shadow-halo"
-                : "border-white/10 bg-white/5"
-            }`}
-          >
-            {tier.featured ? <Badge className="mb-4">Most aligned</Badge> : null}
-            <h3 className="font-display text-3xl text-white">{tier.name}</h3>
-            <div className="mt-4 font-display text-5xl text-white">
-              {tier.price}
+
+      <div className="mx-auto max-w-lg">
+        <div className="relative overflow-hidden rounded-3xl border border-violet-500/30 bg-gradient-to-b from-violet-500/10 to-transparent p-8 shadow-halo">
+          {/* Background glow */}
+          <div className="pointer-events-none absolute -top-20 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-violet-500/20 blur-[60px]" />
+
+          <div className="relative">
+            {/* Plan name */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-violet-400">
+              Plan unique
             </div>
-            <p className="mt-4 min-h-[72px] text-white/68">{tier.description}</p>
-            <div className="mt-6 space-y-3">
-              {tier.features.map((feature) => (
-                <div
-                  key={feature}
-                  className="rounded-2xl border border-white/8 bg-black/15 px-4 py-3 text-sm text-white/72"
-                >
-                  {feature}
-                </div>
+
+            {/* Price */}
+            <div className="mt-6 flex items-end gap-2">
+              <span className="font-display text-8xl font-semibold text-white">15%</span>
+              <span className="mb-3 text-sm text-white/45">des revenus générés</span>
+            </div>
+
+            <p className="mt-2 text-base font-medium text-white/60">
+              Vous ne payez que si vous gagnez
+            </p>
+
+            {/* Example calculation */}
+            <div className="mt-6 rounded-2xl border border-white/8 bg-white/5 p-4">
+              <div className="text-sm text-white/45">Exemple concret</div>
+              <div className="mt-2 flex items-center justify-between">
+                <span className="text-sm text-white/70">Garage — 300 €/mois générés</span>
+              </div>
+              <div className="mt-2 flex items-center justify-between border-t border-white/8 pt-2">
+                <span className="text-sm font-medium text-white">Vous encaissez</span>
+                <span className="font-display text-xl font-semibold text-white">255 €</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-white/40">Commission Spurb</span>
+                <span className="text-sm text-white/40">45 €</span>
+              </div>
+            </div>
+
+            {/* Features */}
+            <ul className="mt-6 space-y-3">
+              {included.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-violet-500/20">
+                    <Check className="h-2.5 w-2.5 text-violet-400" />
+                  </div>
+                  <span className="text-sm text-white/60">{item}</span>
+                </li>
               ))}
-            </div>
+            </ul>
+
+            {/* CTA */}
+            <Link
+              href="/onboarding"
+              onClick={() => (typeof window !== "undefined" && window.posthog?.capture("cta_clicked", { location: "pricing" }))}
+              className="group mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-violet-600 px-6 py-3.5 text-sm font-semibold text-white shadow-halo transition hover:bg-violet-500 hover:shadow-[0_0_40px_rgba(124,58,237,0.4)]"
+            >
+              Commencer gratuitement
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+
+            <p className="mt-4 text-center text-xs text-white/30">
+              Sans carte bancaire · Commencer est gratuit · Vous payez uniquement quand vous gagnez
+            </p>
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );

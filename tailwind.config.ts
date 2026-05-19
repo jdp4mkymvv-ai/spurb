@@ -25,10 +25,11 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-glow":
-          "radial-gradient(circle at top, rgba(242, 111, 37, 0.26), transparent 30%), radial-gradient(circle at 20% 30%, rgba(80, 174, 92, 0.24), transparent 34%), linear-gradient(135deg, rgba(12, 20, 35, 0.98), rgba(5, 9, 17, 0.98))"
+          "radial-gradient(ellipse 70% 60% at 50% -10%, rgba(124,58,237,0.25), transparent), radial-gradient(ellipse 50% 40% at 80% 20%, rgba(109,40,217,0.15), transparent), linear-gradient(180deg, #0d0d0d, #0a0a0a)"
       },
       boxShadow: {
-        halo: "0 24px 80px rgba(242, 111, 37, 0.18)"
+        halo: "0 30px 80px rgba(124, 58, 237, 0.22)",
+        "violet-sm": "0 0 20px rgba(124, 58, 237, 0.15)"
       },
       fontFamily: {
         display: ["var(--font-display)"],
