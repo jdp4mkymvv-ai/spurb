@@ -71,11 +71,13 @@ Observed behavior on 2026-05-19:
 - Browser inspection shows a NanoCorp placeholder page with title `spurb | Coming Soon`
 - Page body includes `NANOCORP_STATUS:coming_soon` and `DEPLOYED:false`
 - HTTP inspection also returned a Vercel `DEPLOYMENT_NOT_FOUND` response header path before the placeholder handling
+- Post-push verification was attempted again on 2026-05-19 after commit `30dae14`, but the local `agent-browser` installation could not launch because Chrome is not installed in the worker environment
 
 Conclusion:
 
 - There is no live Spurb application deployment yet
 - The domain currently resolves to a platform placeholder rather than an app built from this repo
+- Browser-based post-push verification is currently blocked in this worker environment until `agent-browser install` or a Chrome executable is available
 
 ## Database Audit
 
@@ -192,6 +194,7 @@ Activation path once Stripe credentials are available:
 Blocking gap:
 
 - A real Stripe `prod_...` and `price_...` could not be created during this task because no Stripe secret key was present in the environment.
+- Browser deployment verification after pushing could not complete because `agent-browser` has no Chrome binary available in this worker environment.
 
 ## Missing Pieces
 
@@ -254,6 +257,7 @@ This avoids blocking on third-party marketplace automation before proving demand
 - 2026-05-19: Initial codebase audit added
 - 2026-05-19: Homepage copy and value proposition written — see `content/homepage.md`
 - 2026-05-19: Added billing product manifest, Postgres billing_products migration, and Stripe activation script for `spurb_monthly`
+- 2026-05-19: Attempted required post-push deployment verification, but `agent-browser` could not start because Chrome is not installed locally
 
 ## Content Assets
 
