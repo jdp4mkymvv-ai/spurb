@@ -2,6 +2,97 @@
 
 Last updated: 2026-05-19
 
+## Exploration Notes: Spurb MVP alignment task
+
+Exploration completed on 2026-05-19 before applying the requested MVP file set.
+
+### Current state discovered
+
+- The repo already contains a working Next.js 14 + Tailwind + TypeScript scaffold.
+- `prisma/schema.prisma` existed but used a different data model:
+  - `Owner` instead of `User`
+  - enum-based `AssetType`
+  - asset fields such as `title`, `priceMonth`, and `active`
+  - payment fields such as `spurb_fee`, `paidAt`, and `stripeId`
+- Existing API routes depended on that old Prisma shape:
+  - `app/api/assets/route.ts` imported `AssetType` and created nested `owner` records
+  - `app/api/listings/route.ts` queried `asset.owner` and created `externalId` / `active` listing fields
+- Stripe webhook support already existed at `app/api/stripe/webhook/route.ts`, but the task requires an additional route at `app/api/webhooks/stripe/route.ts`.
+- `README.md` was still minimal and not yet bilingual.
+- `.env.example` and `vercel.json` were missing.
+- `package.json` already included `stripe` and `@prisma/client`, but `prisma` was listed under `dependencies` instead of `devDependencies`.
+
+### Planned changes from this exploration
+
+- Replace the Prisma schema with the task-specified MVP schema.
+- Update existing Prisma-backed API routes so they compile against the new model names and fields.
+- Add the three requested Stripe routes:
+  - `app/api/stripe/onboard/route.ts`
+  - `app/api/stripe/payment/route.ts`
+  - `app/api/webhooks/stripe/route.ts`
+- Add `.env.example` and `vercel.json`.
+- Rewrite `README.md` in English and French with setup, env vars, deployment, and architecture sections.
+- Move `prisma` to `devDependencies`, regenerate Prisma client, run a production build, then commit and push to the requested GitHub remote.
+
+## Implementation Update: Spurb MVP alignment
+
+Completed on 2026-05-19 for the "Spurb MVP — Build complete codebase and push to GitHub jdp4mkymvv-ai/spurb" task.
+
+### What changed
+
+- Replaced `prisma/schema.prisma` with the requested MVP schema:
+  - `User`
+  - `Asset`
+  - `Listing`
+  - `Tenant`
+  - `Lease`
+  - `Payment`
+  - `AgentLog`
+- Added the requested Stripe routes:
+  - `app/api/stripe/onboard/route.ts`
+  - `app/api/stripe/payment/route.ts`
+  - `app/api/webhooks/stripe/route.ts`
+- Added `.env.example` with the requested environment variables.
+- Added `vercel.json` with Prisma generation in the build command.
+- Rewrote `README.md` in English and French with:
+  - product presentation,
+  - stack overview,
+  - local setup,
+  - environment variable descriptions,
+  - five-step Vercel deployment instructions,
+  - folder architecture.
+- Updated `package.json` so:
+  - `stripe` remains in `dependencies`,
+  - `@prisma/client` remains in `dependencies`,
+  - `prisma` is now in `devDependencies`.
+- Updated `app/api/assets/route.ts` and `app/api/listings/route.ts` to compile against the new Prisma schema instead of the prior `Owner` / `AssetType` model.
+
+### Build and implementation notes
+
+- `npm install` completed successfully.
+- `prisma generate` completed successfully through `postinstall`.
+- `npm run build` passed successfully on 2026-05-19 after two compatibility fixes:
+  - the requested Stripe `apiVersion` string needed a TypeScript compatibility cast because the installed Stripe SDK types target a newer literal API version;
+  - Stripe client construction in the new route modules was made lazy so local builds do not fail when `STRIPE_SECRET_KEY` is absent at build time.
+
+### Files added by this task
+
+- `.env.example`
+- `vercel.json`
+- `app/api/stripe/onboard/route.ts`
+- `app/api/stripe/payment/route.ts`
+- `app/api/webhooks/stripe/route.ts`
+
+### Files updated by this task
+
+- `DOCS.md`
+- `README.md`
+- `app/api/assets/route.ts`
+- `app/api/listings/route.ts`
+- `package.json`
+- `package-lock.json`
+- `prisma/schema.prisma`
+
 ## Implementation Update: Next.js 14 App Initialization
 
 Completed on 2026-05-19 after the initial audit.

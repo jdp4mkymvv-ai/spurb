@@ -5,9 +5,10 @@ import { prisma } from "@/lib/prisma";
 const listingPayloadSchema = z.object({
   assetId: z.string().min(1),
   platform: z.string().min(2),
-  externalId: z.string().optional(),
   url: z.string().url().optional(),
-  active: z.boolean().optional()
+  active: z.boolean().optional(),
+  priceMonth: z.number().nonnegative().optional(),
+  status: z.string().min(1).optional()
 });
 
 export async function GET() {
@@ -16,7 +17,7 @@ export async function GET() {
       include: {
         asset: {
           include: {
-            owner: true
+            user: true
           }
         }
       },
@@ -46,9 +47,9 @@ export async function POST(request: Request) {
     data: {
       assetId: payload.assetId,
       platform: payload.platform,
-      externalId: payload.externalId,
       url: payload.url,
-      active: payload.active ?? true
+      priceMonth: payload.priceMonth ?? 0,
+      status: payload.status ?? (payload.active === false ? "inactive" : "active")
     },
     include: {
       asset: true
