@@ -1,0 +1,25 @@
+{
+  "slug": "spurb_monthly",
+  "name": "Spurb — Space Management",
+  "description": "Automated listing, tenant screening, lease generation, and rent collection for your garage or driveway space.",
+  "pricing_model": "flat_fee_mvp_placeholder_for_10_percent_platform_fee",
+  "unit_amount_cents": 2900,
+  "currency": "usd",
+  "billing_interval": "month",
+  "statement_descriptor_suffix": "SPURB",
+  "features": [
+    "Automated listing",
+    "Tenant screening",
+    "Lease generation",
+    "Rent collection"
+  ],
+  "stripe": {
+    "required_env": [
+      "STRIPE_SECRET_KEY"
+    ],
+    "product_id": null,
+    "price_id": null,
+    "price_lookup_key": "spurb_monthly_usd_2900",
+    "activation_status": "pending_stripe_secret_key"
+  }
+}

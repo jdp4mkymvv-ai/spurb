@@ -11,6 +11,11 @@ Audit of the current Spurb repository, deployment, database, and company-level i
 Current tracked application files in the repo root:
 
 - `README.md`
+- `DOCS.md`
+- `content/homepage.md`
+- `config/billing/spurb-monthly.json`
+- `scripts/activate_spurb_monthly_stripe_product.sh`
+- `db/migrations/0001_billing_products.sql`
 
 Notably missing:
 
@@ -22,7 +27,7 @@ Notably missing:
 - `tsconfig.json`
 - `next.config.*`
 - Tailwind, ESLint, or TypeScript config
-- Any migration files or ORM config
+- Any ORM config
 
 Git state:
 
@@ -38,6 +43,9 @@ Current codebase stack:
 
 - Git repository only
 - Markdown README only
+- Billing product manifest in JSON
+- One SQL migration for payment product metadata
+- One shell activation script for Stripe API product creation
 - No Node.js project manifest
 - No React or Next.js source code
 - No frontend build pipeline
@@ -78,13 +86,13 @@ Environment access:
 
 Schema inspection on 2026-05-19:
 
-- No non-system tables found
-- No tables in the `public` schema
+- `billing_products` table exists in the `public` schema
+- `billing_products` contains one seeded row for `spurb_monthly`
 
 Conclusion:
 
-- Neon/Postgres is provisioned but unused
-- There is no application schema, no migrations, and no seed data
+- Neon/Postgres is provisioned and now stores billing product metadata
+- There is still no broader application schema beyond the billing placeholder record
 
 ## Existing Routes, Pages, and API Endpoints
 
@@ -109,14 +117,22 @@ Conclusion:
 
 ### Stripe / Payments
 
-- `nanocorp products list` returned no products
-- `nanocorp payments link` returned no payment link
+- No `STRIPE_SECRET_KEY` environment variable is present locally as of 2026-05-19
+- Direct Stripe API activation is therefore blocked for now
+- NanoCorp CLI product creation was tested and appears to create simple products only; the exposed tooling does not currently expose a recurring/monthly interval flag
+- A billing manifest now exists at `config/billing/spurb-monthly.json`
+- An activation script now exists at `scripts/activate_spurb_monthly_stripe_product.sh`
+- A seeded database record now exists in `billing_products` with slug `spurb_monthly`
+- The Stripe lookup key reserved in config and DB is `spurb_monthly_usd_2900`
+- `nanocorp products list` returned no active products after cleanup
+- `nanocorp payments link` still returned an active Stripe payment link after cleanup, so do not use that link as the source of truth for the MVP recurring plan
 - `nanocorp payments revenue` returned `$0.00` across `0` payments
 
 Conclusion:
 
-- Payments are not configured
-- No sellable products or checkout link exist yet
+- Payments are not fully activated yet because the Stripe secret key is missing
+- The current NanoCorp payment link state appears stale relative to the active product list
+- The recurring product definition is now stored in code and database state, ready to activate as soon as `STRIPE_SECRET_KEY` is provided
 
 ### Analytics
 
@@ -135,9 +151,47 @@ Very little is built today:
 - GitHub repository connected to NanoCorp/Vercel platform
 - Neon database credentials provisioned
 - Vercel environment variable `DATABASE_URL` provisioned
+- Billing product config for the MVP monthly plan
+- Billing product placeholder row stored in Postgres
+- Stripe activation script for creating the real recurring Stripe product and price
 - Public domain assigned
 
 There is no implemented product surface yet.
+
+## Billing Product Setup
+
+Implemented on 2026-05-19 for the MVP subscription placeholder:
+
+- Product name: `Spurb — Space Management`
+- Description: `Automated listing, tenant screening, lease generation, and rent collection for your garage or driveway space.`
+- Price: `$29/month`
+- Currency: `usd`
+- Billing interval: `month`
+- Pricing model note: flat-fee MVP placeholder for the intended 10% platform fee business model
+
+Artifacts created:
+
+- `config/billing/spurb-monthly.json`
+- `db/migrations/0001_billing_products.sql`
+- `scripts/activate_spurb_monthly_stripe_product.sh`
+
+Database state after migration:
+
+- Table `billing_products` exists
+- Seed row `spurb_monthly` exists
+- `stripe_product_id` is `NULL`
+- `stripe_price_id` is `NULL`
+- `activation_status` is `pending_stripe_secret_key`
+
+Activation path once Stripe credentials are available:
+
+1. Export `STRIPE_SECRET_KEY` in the execution environment.
+2. Run `scripts/activate_spurb_monthly_stripe_product.sh`.
+3. The script will create the Stripe product and recurring monthly price, update `config/billing/spurb-monthly.json`, and backfill `billing_products.stripe_product_id` and `billing_products.stripe_price_id`.
+
+Blocking gap:
+
+- A real Stripe `prod_...` and `price_...` could not be created during this task because no Stripe secret key was present in the environment.
 
 ## Missing Pieces
 
@@ -199,6 +253,7 @@ This avoids blocking on third-party marketplace automation before proving demand
 
 - 2026-05-19: Initial codebase audit added
 - 2026-05-19: Homepage copy and value proposition written — see `content/homepage.md`
+- 2026-05-19: Added billing product manifest, Postgres billing_products migration, and Stripe activation script for `spurb_monthly`
 
 ## Content Assets
 
