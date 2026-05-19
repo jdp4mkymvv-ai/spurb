@@ -530,3 +530,54 @@ Full homepage copywriting for the frontend worker to implement. **Fully rewritte
 - FAQ (7 questions) orientée IA et automatisation
 - CTA final: "Laissez votre IA travailler pendant que vous dormez"
 - SEO/meta copy and implementation notes for the frontend worker
+
+## Exploration Notes: transfer to `jdp4mkymvv-ai/spurb`
+
+Exploration completed on 2026-05-19 for the task "Push Spurb codebase directly to jdp4mkymvv-ai/spurb".
+
+### Current state discovered
+
+- The company repo at `/home/worker/repo` is clean on `main` and matches `origin/main`.
+- Current source commit at transfer time: `5ca3457b89ea5d554505ca5db536f516efa89d84` (`fix: remove prisma generate from build for landing-only Vercel deploy`).
+- Required repo contents are present in the source tree, including:
+  - `package.json`
+  - `app/`
+  - `vercel.json`
+  - `prisma/schema.prisma`
+  - `lib/`
+  - `.env.example`
+  - `README.md`
+- The target repo `https://github.com/jdp4mkymvv-ai/spurb` exists and is reachable, but `git ls-remote` returned no refs, which is consistent with an empty repository.
+- The worker environment has:
+  - SSH auth for `git@github.com` via a deploy key identified by GitHub as `nanocorp-hq/spurb`
+  - no configured Git credential helper,
+  - no visible GitHub token env var,
+  - no `.netrc` or askpass configuration for HTTPS pushes.
+
+## Implementation Update: attempted repo handoff to `jdp4mkymvv-ai/spurb`
+
+Completed on 2026-05-19 for the transfer task.
+
+### What changed
+
+- Created a fresh transfer clone from the authorized source repo into `/tmp/spurb-source.lSL6Lh`.
+- Verified that the transfer clone also points at commit `5ca3457b89ea5d554505ca5db536f516efa89d84`.
+- Repointed the transfer clone's `origin` first to:
+  - `https://github.com/jdp4mkymvv-ai/spurb.git`
+  - then `git@github.com:jdp4mkymvv-ai/spurb.git`
+- Attempted the required force-push of `main` to the user's repo via both HTTPS and SSH.
+
+### Transfer outcome
+
+- HTTPS push failed with:
+  - `fatal: could not read Username for 'https://github.com': No such device or address`
+- SSH push failed with:
+  - `ERROR: Permission to jdp4mkymvv-ai/spurb.git denied to deploy key`
+- Result: the codebase was prepared for transfer, but the push to `jdp4mkymvv-ai/spurb` did not succeed because this worker only has write access to the company repo's deploy key and no alternate GitHub credential was available.
+
+### Follow-up needed to complete the transfer
+
+- Provide a GitHub token or repo write access for `jdp4mkymvv-ai/spurb`, or add the worker's deploy key to that repository.
+- Once write access exists, rerun:
+  - `git push origin main --force`
+  from the prepared transfer clone after setting `origin` to the target repo.
