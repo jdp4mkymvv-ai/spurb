@@ -197,4 +197,18 @@ This avoids blocking on third-party marketplace automation before proving demand
 
 ## Documentation Change Log
 
-This file was added on 2026-05-19 to persist audit findings for future workers and reduce repeat exploration.
+- 2026-05-19: Initial codebase audit added
+- 2026-05-19: Homepage copy and value proposition written — see `content/homepage.md`
+
+## Content Assets
+
+### `content/homepage.md`
+Full homepage copywriting for the frontend worker to implement. Includes:
+- Hero headline + subheadline (benefit-driven, punchy)
+- How It Works (3-step flow: Sign Up → We List & Screen → You Get Paid)
+- Feature bullets (auto-listing, tenant screening, lease generation, payments, dashboard, cancel anytime)
+- Social proof bar (stats: $312 avg/mo, 4 days to first tenant, $0 upfront) + 3 testimonial placeholders
+- Pricing section (Free tier + Spurb Standard at 10% of rent + Spurb Pro at 8% coming soon)
+- FAQ (5 questions covering space types, screening, leases, payouts, and cancellation)
+- CTA copy: primary "List My Space Free", secondary "See How It Works"
+- SEO/meta copy and implementation notes for the frontend worker
