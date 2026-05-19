@@ -1,5 +1,55 @@
 # Spurb Codebase Audit
 
+## Exploration Notes: landing-only Vercel deploy without DATABASE_URL
+
+Exploration completed on 2026-05-19 before applying the landing-only deployment patch.
+
+### Current state discovered
+
+- `package.json` already uses `"build": "next build"`, so the local build script no longer forces Prisma generation.
+- `vercel.json` still overrides the build with `"buildCommand": "prisma generate && next build"`, which would reintroduce the Prisma requirement on Vercel.
+- `package.json` still contains `"postinstall": "prisma generate"`, and the existing `vercel.json` also sets `"installCommand": "npm install"`, so Vercel install currently still triggers Prisma generation before build.
+- `lib/prisma.ts` statically imports `PrismaClient` from `@prisma/client` and instantiates it at module load time. That means any route importing `@/lib/prisma` can fail during build/runtime boot if the generated Prisma client is absent.
+- The Prisma-backed routes are:
+  - `app/api/assets/route.ts`
+  - `app/api/listings/route.ts`
+- `next.config.mjs` does not reference `DATABASE_URL` and does not need guarding for this task.
+- Stripe routes are already using lazy helpers and are unrelated to the `DATABASE_URL` deploy blocker.
+
+### Planned changes from this exploration
+
+- Replace the Vercel override so production builds use plain `next build`.
+- Remove Prisma generation from install-time scripts so Vercel can deploy without `DATABASE_URL`.
+- Convert Prisma access to a lazy runtime loader that returns `null` when Prisma is unavailable.
+- Make Prisma-backed API routes return a graceful `503` landing-only response instead of crashing when Prisma is unavailable.
+
+## Implementation Update: landing-only Vercel deploy without DATABASE_URL
+
+Completed on 2026-05-19 for the task "Patch vercel.json to remove prisma generate from build command for landing-only deployment".
+
+### What changed
+
+- Updated `vercel.json` so Vercel uses:
+  - `"framework": "nextjs"`
+  - `"buildCommand": "next build"`
+  - `"outputDirectory": ".next"`
+- Removed the root `postinstall` Prisma generation hook from `package.json` so installs no longer force Prisma generation before build.
+- Regenerated `package-lock.json` so the root package no longer advertises an install script.
+- Replaced the static Prisma client import in `lib/prisma.ts` with a lazy loader that:
+  - returns `null` when `DATABASE_URL` is missing,
+  - catches missing generated-client errors,
+  - logs once that the app is running in landing-only mode.
+- Updated `app/api/assets/route.ts` and `app/api/listings/route.ts` so they return `503` JSON responses when Prisma is unavailable instead of crashing.
+
+### Verification completed
+
+- `npm install` completed successfully after removing the root `postinstall` hook.
+- `env -u DATABASE_URL npm run build` passed successfully on 2026-05-19.
+- Local runtime verification with `DATABASE_URL` unset confirmed:
+  - `GET /api/assets` returns `503` with a landing-only message.
+  - `GET /api/listings` returns `503` with a landing-only message.
+  - `/` renders and includes the expected landing-page sections, including hero copy, asset content, pricing, FAQ, and footer markers.
+
 Last updated: 2026-05-19
 
 ## Exploration Notes: Spurb MVP alignment task

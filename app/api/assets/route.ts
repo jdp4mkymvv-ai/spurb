@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { prisma } from "@/lib/prisma";
+import { getPrismaClient } from "@/lib/prisma";
 
 const assetPayloadSchema = z.object({
   ownerEmail: z.string().email().optional(),
@@ -18,6 +18,19 @@ const assetPayloadSchema = z.object({
 });
 
 export async function GET() {
+  const prisma = getPrismaClient();
+
+  if (!prisma) {
+    return NextResponse.json(
+      {
+        assets: [],
+        error: "Database features are not available yet.",
+        detail: "Landing-only mode is active."
+      },
+      { status: 503 }
+    );
+  }
+
   try {
     const assets = await prisma.asset.findMany({
       include: {
@@ -45,6 +58,18 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  const prisma = getPrismaClient();
+
+  if (!prisma) {
+    return NextResponse.json(
+      {
+        error: "Asset creation is not available yet.",
+        detail: "Landing-only mode is active."
+      },
+      { status: 503 }
+    );
+  }
+
   const json = await request.json();
   const payload = assetPayloadSchema.parse(json);
   const email = payload.ownerEmail ?? payload.email;
