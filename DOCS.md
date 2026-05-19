@@ -219,6 +219,30 @@ The repository is no longer a pre-app placeholder. It now contains a deployable 
 
 ### Immediate follow-up tasks recommended
 
+## Exploration Notes: export codebase to external GitHub repository
+
+Exploration completed on 2026-05-19 before retrying the public-repo push task.
+
+### Current state discovered
+
+- The working tree was clean on `main` and already tracked by git.
+- The internal remote remained:
+  - `origin git@github.com:nanocorp-hq/spurb.git`
+- The repo already contains the expected Spurb Next.js MVP assets for export, including:
+  - `package.json`
+  - `app/`
+  - `tailwind.config.ts`
+  - `vercel.json`
+  - Stripe/API scaffolding under `app/api/`
+- `DOCS.md` already recorded an earlier failed attempt to push to `jdp4mkymvv-ai/spurb`, blocked by missing GitHub credentials in that worker session.
+
+### Plan for this task
+
+- Add a separate remote for the user's GitHub repository without disturbing `origin`.
+- Commit the documentation update to preserve this exploration step.
+- Push `main` to the user-owned GitHub repository with interactive credentials.
+- Verify the pushed branch by checking the remote ref after push.
+
 1. Connect the onboarding form to `POST /api/assets` with a client action or server action.
 2. Run `prisma db push` or create the first SQL migration so the live database matches `prisma/schema.prisma`.
 3. Add auth for owners before treating `/dashboard` as real production state.
