@@ -325,6 +325,39 @@ To get live quickly, the first version should likely focus on:
 
 This avoids blocking on third-party marketplace automation before proving demand and operations.
 
+## Landing Page Implementation (2026-05-19)
+
+Full rebuild of `app/page.tsx` and all `components/landing/` files with the new agentique vision.
+
+### Design system
+- Background: `#0a0a0a` deep black with radial purple gradients
+- Accent: `#7c3aed` violet/purple — all CTAs, badges, card hovers, icon backgrounds
+- Typography: Bricolage Grotesque (display) + DM Sans (body)
+- Animations: CSS keyframes (`blob-float`, `fade-up`, `shimmer`) — no external deps needed
+
+### Components (all in `components/landing/`)
+| File | Purpose |
+|------|---------|
+| `Hero.tsx` (`"use client"`) | Animated gradient blobs, AI badge, large headline, 2 CTAs |
+| `SocialProof.tsx` | Stats bar: 2 400 assets / +€180k / 15% commission |
+| `HowItWorks.tsx` | 3-step cards with numbered indicators and purple icons |
+| `AssetCards.tsx` | 2×3 grid of 6 asset cards with hover glow animations |
+| `AgentFeatures.tsx` | Sticky left col + 6 feature rows (what the agent does) |
+| `Pricing.tsx` (`"use client"`) | Single 15%-commission plan with example calculation |
+| `FAQ.tsx` (`"use client"`) | Interactive accordion with 5 French Q&As |
+| `Footer.tsx` | Logo, 4 nav links, copyright |
+
+### Key files changed
+- `app/globals.css` — purple CSS variables, animation keyframes, `.card-hover` glow
+- `tailwind.config.ts` — violet shadow/gradient tokens
+- `app/layout.tsx` — DM_Sans font, French metadata
+- `app/page.tsx` — assembles all sections + final CTA section
+
+### Build status
+- `npm run build` passes (9/9 static pages generated)
+- Committed `a233fb8` and pushed to `main`
+- Vercel deployment pending (screenshot confirmed old version still served after push)
+
 ## Documentation Change Log
 
 - 2026-05-19: Initial codebase audit added
