@@ -243,6 +243,40 @@ Exploration completed on 2026-05-19 before retrying the public-repo push task.
 - Push `main` to the user-owned GitHub repository with interactive credentials.
 - Verify the pushed branch by checking the remote ref after push.
 
+## Implementation Update: export codebase to external GitHub repository
+
+Completed on 2026-05-19 for the task "Push Spurb codebase to GitHub repo jdp4mkymvv-ai/spurb".
+
+### What changed
+
+- Added a separate git remote:
+  - `public https://github.com/jdp4mkymvv-ai/spurb.git`
+- Added this task's audit trail to `DOCS.md`.
+- Created commit `2959974` with message:
+  - `docs: record external GitHub export task`
+- Pushed the current Spurb codebase to the user's public GitHub repository on `main`.
+
+### Git output recorded
+
+- Internal preservation push:
+  - `To github.com:nanocorp-hq/spurb.git`
+  - `1b40dcc..2959974  main -> main`
+- Public export push:
+  - `Enumerating objects: 157, done.`
+  - `Writing objects: 100% (157/157), 134.43 KiB | 22.40 MiB/s, done.`
+  - `Total 157 (delta 39), reused 152 (delta 37), pack-reused 0`
+  - `To https://github.com/jdp4mkymvv-ai/spurb.git`
+  - `* [new branch] main -> main`
+  - `branch 'main' set up to track 'public/main'.`
+
+### Verification completed
+
+- Local `HEAD` after push:
+  - `29599745bafa65508275f7797b137ccec2199fa2`
+- Remote `public` ref check:
+  - `29599745bafa65508275f7797b137ccec2199fa2 refs/heads/main`
+- Result: the public GitHub repository now contains the same `main` commit as the local Spurb repo at the time of export.
+
 1. Connect the onboarding form to `POST /api/assets` with a client action or server action.
 2. Run `prisma db push` or create the first SQL migration so the live database matches `prisma/schema.prisma`.
 3. Add auth for owners before treating `/dashboard` as real production state.
