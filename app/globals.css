@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 216 42% 7%;
+  --foreground: 36 50% 96%;
+  --card: 218 31% 12%;
+  --card-foreground: 35 33% 95%;
+  --primary: 20 90% 55%;
+  --primary-foreground: 36 50% 98%;
+  --secondary: 141 41% 42%;
+  --secondary-foreground: 38 45% 96%;
+  --border: 215 24% 20%;
+  --muted: 220 24% 14%;
+  --muted-foreground: 33 14% 74%;
+  --accent: 44 92% 61%;
+  --accent-foreground: 216 42% 7%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(242, 111, 37, 0.12), transparent 24%),
+    radial-gradient(circle at 80% 0%, rgba(249, 201, 75, 0.08), transparent 18%),
+    linear-gradient(180deg, rgba(5, 9, 17, 1), rgba(7, 12, 22, 1));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(242, 111, 37, 0.35);
+  color: white;
+}
+
+.grain-overlay {
+  position: relative;
+}
+
+.grain-overlay::before {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  content: "";
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 18px 18px;
+  mix-blend-mode: overlay;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-kicker {
+  @apply mb-4 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.22em] text-white/70;
+}
+
+.display-balance {
+  text-wrap: balance;
+}

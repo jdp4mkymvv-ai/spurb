@@ -2,6 +2,72 @@
 
 Last updated: 2026-05-19
 
+## Implementation Update: Next.js 14 App Initialization
+
+Completed on 2026-05-19 after the initial audit.
+
+### What was added
+
+- Full Next.js 14 App Router project at the repo root
+- TypeScript, Tailwind CSS, PostCSS, ESLint, and standard Next config
+- `app/` routes for:
+  - `/`
+  - `/dashboard`
+  - `/onboarding`
+  - `/api/assets`
+  - `/api/listings`
+  - `/api/stripe/webhook`
+- `components/landing/*` for the marketing page sections
+- `components/dashboard/*` for owner dashboard widgets
+- `components/ui/*` for shadcn-style primitives (`button`, `badge`, `card`, `input`, `textarea`)
+- `lib/prisma.ts` Prisma singleton
+- `lib/stripe.ts` Stripe server utility
+- `lib/agents/*` modules for listing, pricing, and screening agent scaffolding using the OpenAI SDK
+- `prisma/schema.prisma` with the requested owner / asset / listing / tenant / lease / payment data model
+- NanoCorp analytics script installed in `app/layout.tsx`
+- `components.json` added for shadcn/ui-compatible project structure
+
+### Package / tooling decisions
+
+- Next.js pinned to `14.2.35`
+- React pinned to `18.2.0` for compatibility with Next 14
+- TypeScript pinned to `5.4.5`
+- Prisma pinned to `6.19.3` instead of Prisma 7 to avoid introducing Prisma 7 migration/config changes during the scaffold task
+- Added the user-requested `@shadcn/ui` package plus the usual utility packages needed for local shadcn-style components:
+  - `@radix-ui/react-slot`
+  - `class-variance-authority`
+  - `clsx`
+  - `tailwind-merge`
+  - `lucide-react`
+
+### Build verification
+
+- `npm install` completed successfully
+- `prisma generate` completed successfully via `postinstall`
+- `npm run build` passed successfully on 2026-05-19
+
+Generated app routes during build:
+
+- `/`
+- `/dashboard`
+- `/onboarding`
+- `/api/assets`
+- `/api/listings`
+- `/api/stripe/webhook`
+
+### Current repo status after initialization
+
+The repository is no longer a pre-app placeholder. It now contains a deployable Next.js application foundation with the requested folder structure, backend scaffolding, and Prisma schema.
+
+### Immediate follow-up tasks recommended
+
+1. Connect the onboarding form to `POST /api/assets` with a client action or server action.
+2. Run `prisma db push` or create the first SQL migration so the live database matches `prisma/schema.prisma`.
+3. Add auth for owners before treating `/dashboard` as real production state.
+4. Replace placeholder dashboard metrics with real Prisma queries.
+5. Build the Stripe checkout/subscription path and persist webhook outcomes.
+6. Wire the OpenAI agent modules into concrete onboarding, pricing, and review workflows.
+
 ## Scope
 
 Audit of the current Spurb repository, deployment, database, and company-level integrations before MVP build-out.
