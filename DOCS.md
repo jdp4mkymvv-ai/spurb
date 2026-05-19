@@ -93,6 +93,16 @@ Completed on 2026-05-19 for the "Spurb MVP — Build complete codebase and push 
 - `package-lock.json`
 - `prisma/schema.prisma`
 
+### Git and deployment outcome
+
+- Commit created: `dda1233` with message `feat: Spurb MVP — Prisma schema + Stripe Connect + Vercel config + README`.
+- Push to the requested target repo `jdp4mkymvv-ai/spurb` was attempted twice and failed due credentials:
+  - HTTPS push failed because no GitHub username/password credentials were available for `https://github.com`.
+  - SSH push failed with `Permission to jdp4mkymvv-ai/spurb.git denied to deploy key`, which confirms the worker's GitHub key is scoped to the company repo instead.
+- To avoid losing work, the commit was pushed successfully to the authorized repo `nanocorp-hq/spurb` on `main`.
+- Post-push deployment verification was attempted exactly once after the required 90-second wait, but `agent-browser` could not launch because Chrome/Chromium is not installed in the worker environment.
+- Result: code changes are pushed and preserved in the company repo, but verification of the live site remains pending, and the requested external-repo push remains blocked on GitHub access.
+
 ## Implementation Update: Next.js 14 App Initialization
 
 Completed on 2026-05-19 after the initial audit.
