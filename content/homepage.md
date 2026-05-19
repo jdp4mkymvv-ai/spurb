@@ -1,211 +1,191 @@
-# Spurb Homepage Copy & Value Proposition
+# Spurb Homepage Copy — OS for Idle Assets
 
 _Last updated: 2026-05-19_
-_Status: Ready for frontend implementation_
+_Positioning: Agentique — "Dis à Spurb ce que tu possèdes. L'IA fait tout le reste."_
 
 ---
 
 ## 1. Hero Section
 
 ### Primary Headline
-**Your Garage Is Paying Your Neighbor's Mortgage. Time to Fix That.**
-
-### Alternative Headlines (A/B test candidates)
-- **Your Empty Driveway Could Pay Your Netflix Bill — And Then Some.**
-- **Turn Dead Space Into $300/Month. We Do All The Work.**
-- **Passive Income Hiding in Your Driveway. We'll Find It For You.**
+**Vos biens inutilisés rapportent de l'argent. Automatiquement.**
 
 ### Subheadline
-Spurb lists your garage or driveway on Neighbor.com and Facebook Marketplace, screens every tenant, handles the lease, and deposits the rent — all on autopilot. You just say yes.
+Spurb est un agent IA qui liste, gère, contractualise et encaisse à votre place — sur tous vos assets.
 
 ### Hero CTA
-- **Primary button:** List My Space Free
-- **Secondary link:** See How It Works ↓
+- **Primary button:** Commencer gratuitement
+- **Secondary link:** Voir comment ça marche ↓
 
 ### Hero Trust Signal (below CTA)
-_No upfront cost · No long-term contract · Cancel anytime_
+_Sans frais fixes · Commission uniquement sur les revenus générés · Annulez quand vous voulez_
 
 ---
 
-## 2. Social Proof Bar
+## 2. Comment ça marche (3 étapes)
 
-> "Join **1,200+ homeowners** already earning passive income from space they weren't using."
+**Section headline:** Trois étapes. Zéro effort.
 
-**Stat strip (3 stats side by side):**
-| $312 | 4 days | $0 |
-|------|--------|-----|
-| Average monthly earnings | Average time to first tenant | Upfront cost to list |
+### Étape 1 — Dites-nous ce que vous avez
+**Icône : liste / pin de localisation**
+Dites à Spurb ce que vous possédez — garage, voiture, chambre, jardin, cave, serveur... En quelques minutes, notre IA analyse votre bien et évalue son potentiel de revenus.
 
----
+### Étape 2 — L'IA déploie votre annonce partout
+**Icône : réseau / mégaphone**
+L'agent Spurb rédige vos annonces, les publie simultanément sur Neighbor, Airbnb, Turo, Facebook Marketplace, et les plateformes adaptées à chaque type de bien. Prix optimisé en temps réel. Candidats filtrés automatiquement.
 
-## 3. How It Works
-
-**Section headline:** Three steps. Zero hassle.
-
-### Step 1 — Sign Up (5 minutes)
-**Icon: clipboard / location pin**
-Tell us about your space — address, size, and availability. That's it. No photos required to get started.
-
-### Step 2 — We List & Screen
-**Icon: megaphone / shield**
-We write your listing, post it on Neighbor.com and Facebook Marketplace, field every inquiry, and run background checks on interested tenants. You approve the final choice.
-
-### Step 3 — You Get Paid
-**Icon: dollar sign / calendar**
-Once a tenant is matched, we generate a legally binding lease and collect monthly rent automatically. Your payout lands in your bank account on the 1st.
+### Étape 3 — L'argent arrive chaque mois
+**Icône : calendrier / euro**
+Contrats générés automatiquement. Paiements collectés et virés sur votre compte. Vous ne faites rien — l'IA s'occupe de tout, de la première annonce au dernier virement.
 
 ---
 
-## 4. Key Benefits / Feature Bullets
+## 3. Assets Supportés
 
-**Section headline:** Everything managed. Nothing to worry about.
+**Section headline:** Tout ce que vous possédez peut travailler pour vous.
 
-### Feature Cards
+### Garage / Allée / Stockage
+Transformez votre espace inutilisé en revenu mensuel garanti. Spurb liste sur Neighbor et les plateformes de stockage, gère les locataires et collecte les loyers.
 
-#### Auto-Listing on Top Platforms
-We publish your space on Neighbor.com and Facebook Marketplace — the two highest-traffic storage and parking listing sites — and keep your listings optimized and active.
+### Voiture Inutilisée
+Votre voiture dort dans l'allée ? L'IA la déploie sur Turo, Getaround et les plateformes de location entre particuliers. Assurance, contrats et paiements inclus.
 
-#### Tenant Screening Built In
-Every applicant goes through identity verification and background checks before we recommend them to you. You always get final say before anyone parks or stores in your space.
+### Chambre / Logement
+Que ce soit une chambre libre ou un logement entier, Spurb crée et gère votre annonce Airbnb, règle les disponibilités, répond aux voyageurs et encaisse les réservations.
 
-#### Lease Generation, Done
-We generate a state-compliant rental agreement tailored to your space type (garage, driveway, storage unit). No lawyers, no templates to fill out.
+### Cave / Débarras
+Même quelques mètres carrés ont de la valeur. L'IA optimise le prix de votre espace de stockage et trouve les bons locataires automatiquement.
 
-#### Automated Rent Collection
-Tenants pay through our platform. We handle reminders, late notices, and send your payout directly via ACH transfer. No chasing, no Venmo requests.
+### Jardin / Terrain
+Location pour événements, potager partagé, stationnement en journée... Spurb explore toutes les options et déploie les annonces adaptées à votre terrain.
 
-#### Real-Time Dashboard
-Track your earnings, lease status, and tenant details from a simple dashboard. Know exactly what's happening with your space at a glance.
-
-#### Cancel Anytime
-No lock-in, no cancellation fees. If you need your space back, just give 30 days' notice and we'll handle everything with your tenant.
+### Compute / Serveur
+Vous avez de la capacité de calcul inutilisée ? Spurb la connecte aux marketplaces de compute distribué et génère des revenus passifs depuis votre infrastructure.
 
 ---
 
-## 5. Social Proof / Testimonials
+## 4. Pourquoi Spurb
 
-**Section headline:** Real spaces. Real income.
+**Section headline:** L'IA qui travaille pendant que vous dormez.
 
-### Testimonial 1
-> "I had no idea my two-car garage was worth $275 a month to someone who needed storage. Spurb set everything up in a week and I haven't had to do a thing since."
-> — **Marcus T., Portland OR** · Earning $275/mo from a 2-car garage
+### 100% géré par IA, zéro effort
+Oubliez les annonces à rédiger, les messages à répondre, les contrats à signer. Spurb automatise l'intégralité du cycle — de la publication à l'encaissement. Votre seule action : dire ce que vous possédez.
 
-### Testimonial 2
-> "My driveway was just sitting there. Now it covers my car insurance and then some. The tenant screening gave me real peace of mind."
-> — **Priya L., Austin TX** · Earning $120/mo from a single driveway spot
+### Multi-assets, une seule plateforme
+Un garage, une voiture, une chambre, un serveur — gérez tous vos biens depuis un seul tableau de bord. L'IA adapte la stratégie à chaque type d'asset et à chaque plateforme.
 
-### Testimonial 3
-> "The lease Spurb generated was more thorough than what my landlord gave me. I felt protected and professional without paying a lawyer."
-> — **David R., Chicago IL** · Earning $340/mo from a detached garage
+### Optimisation des prix en temps réel
+L'agent Spurb surveille la demande du marché 24h/24 et ajuste automatiquement vos tarifs pour maximiser vos revenus. Plus besoin de deviner le bon prix.
 
-_[Note: Replace with real testimonials as they come in from beta users. Use initials + city if privacy preferred.]_
+### Contrats générés automatiquement
+Chaque location génère un contrat juridiquement valable, adapté au type de bien et à la réglementation locale. Signatures électroniques incluses. Aucune intervention requise de votre part.
 
 ---
 
-## 6. Pricing Section
+## 5. Pricing
 
-**Section headline:** Free to list. We only win when you do.
+**Section headline:** Aucun frais fixe. On gagne quand vous gagnez.
 
-### Pricing Philosophy
-Spurb is free to start — we earn a small percentage of what you make, so our incentives are perfectly aligned: we work harder to get you better tenants and higher rents.
+### Modèle de commission
+Spurb prend **15% des revenus générés** — et rien d'autre. Pas d'abonnement mensuel, pas de frais d'inscription, pas de frais cachés.
 
-### Pricing Tiers
+Si votre garage génère 300 €/mois, vous encaissez **255 €**. Spurb garde 45 €.
 
-#### Free Tier — $0/month
-- List your space on Neighbor.com and Facebook Marketplace
-- Receive and view tenant inquiries
-- Basic listing optimization
+**Inclus dans la commission :**
+- Publication automatique sur toutes les plateformes pertinentes
+- Optimisation du prix en temps réel
+- Filtrage et vérification des locataires
+- Génération de contrats et e-signatures
+- Collecte des paiements et virements automatiques
+- Tableau de bord de suivi des revenus
+- Support IA disponible 24h/24
 
-_Best for:_ Homeowners who want to explore the market before committing
-
-#### Spurb Standard — 10% of monthly rent
-- Everything in Free
-- Full tenant screening (background check + ID verification)
-- Lease generation and e-signing
-- Automated monthly rent collection via ACH
-- Earnings dashboard
-- Landlord support (we handle tenant questions and issues)
-
-_Best for:_ Homeowners who want true hands-off passive income
-
-_Example: If your garage rents for $300/month, Spurb keeps $30. You keep $270._
-
-#### Spurb Pro — 8% of monthly rent (coming soon)
-- Everything in Standard
-- Multi-space management (2+ spaces)
-- Priority listing placement
-- Dedicated account manager
-- Quarterly earnings review
-
-_Best for:_ Homeowners with multiple rentable spaces
+_Commencer est gratuit. Nous activons vos annonces et vous ne payez rien tant que vous ne gagnez rien._
 
 ---
 
-### Pricing FAQ Callout
-**"What's included in 'free to list'?"**
-Listing your space and receiving inquiries is always free. We only charge our 10% service fee when you actually collect rent. No tenant = no fee. Simple.
+## 6. Social Proof / Vision
+
+**Section headline:** Le futur appartient aux biens qui travaillent pour vous.
+
+### Vision Statement
+L'économie du partage a montré la voie — mais elle demande encore trop d'effort aux propriétaires. Spurb va plus loin : c'est l'OS de vos assets inactifs, un agent IA qui transforme automatiquement ce que vous possédez en revenus passifs réels.
+
+> "Vos biens inutilisés ne dorment plus. Ils travaillent."
+
+### Stat strip (3 stats côte à côte)
+| 15% seulement | Multi-plateformes | 0 € fixe |
+|---------------|-------------------|----------|
+| Commission sur vos revenus | Annonces déployées partout | Aucun abonnement |
 
 ---
 
-## 7. FAQ Section
+## 7. FAQ — IA & Automatisation
 
-**Section headline:** Got questions? We've got answers.
+**Section headline:** Questions sur l'IA ? On répond.
 
-### Q1: What types of spaces can I list?
-**A:** Garages (attached or detached), driveways, parking spots, carports, storage sheds, and even empty lots. If it can hold a car or someone's belongings, we can probably list it. Not sure? Submit your space and we'll let you know within 24 hours.
+### Q1 : Comment Spurb sait-il où publier mon annonce ?
+**R :** L'agent IA analyse le type de bien que vous déclarez, sa localisation, et les plateformes où la demande est la plus forte. Pour une voiture, il choisit Turo ou Getaround. Pour une chambre, Airbnb. Pour un garage, Neighbor ou Facebook Marketplace. La sélection de plateformes est automatique et ajustée en continu selon les performances.
 
-### Q2: How does tenant screening work?
-**A:** Every interested tenant goes through identity verification and a background check run through our screening partner. We flag any red flags and present you with a vetted recommendation. You always have final approval before anyone accesses your space.
+### Q2 : Est-ce que je dois gérer les messages avec les locataires ?
+**R :** Non. L'IA Spurb répond aux demandes, filtre les candidats non qualifiés, et ne vous soumet que les demandes sérieuses pour validation finale. Pour la plupart des locations, vous n'avez même pas besoin d'intervenir.
 
-### Q3: What's in the lease, and is it legally binding?
-**A:** Spurb generates a state-compliant rental agreement that covers the rental term, monthly rate, access rules, liability, and termination conditions. Tenants and owners both sign electronically, and the document is fully enforceable. We update our templates as local laws change.
+### Q3 : Les contrats générés automatiquement sont-ils valables légalement ?
+**R :** Oui. Spurb génère des contrats conformes à la réglementation locale pour chaque type de bien (bail de garage, contrat de location de véhicule, contrat de location courte durée...). Les deux parties signent électroniquement. Les modèles sont mis à jour régulièrement selon l'évolution des lois.
 
-### Q4: When and how do I get paid?
-**A:** Rent is collected from the tenant on the 1st of each month. After our service fee, your payout is transferred via ACH to your bank account — typically within 1–2 business days. No PayPal, no Venmo, no "I'll get you next week."
+### Q4 : Comment l'IA fixe-t-elle le prix de mon bien ?
+**R :** L'agent surveille en permanence les prix pratiqués sur les mêmes plateformes, la saisonnalité, le taux d'occupation local et la demande en temps réel. Il ajuste vos tarifs automatiquement pour maximiser le revenu tout en maintenant un bon taux d'occupation.
 
-### Q5: What if I need my space back?
-**A:** Life happens. You can end your tenant's rental agreement with 30 days' written notice, consistent with most state laws. We handle communicating with the tenant and managing the move-out process. There's no penalty to you from Spurb — just the standard notice period for your tenant.
+### Q5 : Que se passe-t-il si un locataire ne paie pas ?
+**R :** Spurb collecte le paiement directement via la plateforme avant que le locataire accède à votre bien. Vous recevez votre virement uniquement après encaissement effectif. En cas de litige, l'agent prend en charge la communication et les démarches de résolution.
+
+### Q6 : Puis-je lister plusieurs biens différents ?
+**R :** Oui. C'est même là que Spurb est le plus puissant. Vous déclarez tous vos assets une fois — garage, voiture, chambre, terrain — et l'IA gère chaque bien indépendamment, sur les plateformes adaptées à chacun, depuis un seul tableau de bord.
+
+### Q7 : Combien de temps avant de recevoir mon premier revenu ?
+**R :** Une fois vos informations saisies, l'IA déploie les annonces en quelques heures. La durée avant la première location dépend du type de bien et de la demande locale, mais la plupart des propriétaires reçoivent une première réservation dans les 7 jours.
 
 ---
 
-## 8. Final CTA Section
+## 8. CTA Final
 
-**Section headline:** Your space is ready. Are you?
+**Section headline:** Laissez votre IA travailler pendant que vous dormez.
 
-**Body copy:**
-It takes five minutes to list your space. After that, Spurb handles everything — listing, screening, leases, and payments. Your only job is cashing out.
+**Body copy :**
+Dites à Spurb ce que vous possédez. L'agent fait le reste — annonces, contrats, paiements. Vous encaissez. C'est tout.
 
-**Primary CTA button:** List My Space Free
-**Secondary CTA link:** See How It Works
+**Primary CTA button:** Commencer gratuitement
+**Secondary CTA link:** Voir comment ça marche
 
 **Below CTA:**
-_No credit card required · Free to list · Takes 5 minutes_
+_Sans carte bancaire · Sans frais fixes · Commission de 15% sur les revenus générés uniquement_
 
 ---
 
-## 9. Footer Copy Snippets
+## 9. Footer Copy
 
-- **Tagline:** Spurb — Passive income from the space you already own.
-- **Short description (for meta/SEO):** Spurb automatically lists your garage or driveway, screens tenants, generates leases, and collects rent. Earn passive income in 5 minutes.
-- **Copyright:** © 2026 Spurb. All rights reserved.
-- **Footer nav items:** How It Works · Pricing · FAQ · Blog · Contact
+- **Tagline:** Spurb — L'OS de vos assets inactifs.
+- **Short description (SEO):** Spurb est un agent IA qui liste, gère et encaisse à votre place — garage, voiture, chambre, terrain, serveur. Commission de 15% sur les revenus générés uniquement.
+- **Copyright:** © 2026 Spurb. Tous droits réservés.
+- **Footer nav items:** Comment ça marche · Assets supportés · Tarifs · FAQ · Contact
 
 ---
 
 ## 10. SEO / Meta Copy
 
-**Page title:** Spurb — Earn Passive Income From Your Garage or Driveway
-**Meta description:** List your garage or driveway on Neighbor.com and Facebook Marketplace in minutes. Spurb handles tenant screening, lease generation, and rent collection. Free to list.
-**OG headline:** Your Empty Garage Could Pay $300/Month. Spurb Does All The Work.
+**Page title:** Spurb — Vos biens inutilisés rapportent de l'argent. Automatiquement.
+**Meta description:** Spurb est l'agent IA qui liste, gère, contractualise et encaisse à votre place. Garage, voiture, chambre, jardin, serveur. Commission de 15% sur les revenus générés, sans frais fixes.
+**OG headline:** Dis à Spurb ce que tu possèdes. L'IA fait tout le reste.
 
 ---
 
-## Implementation Notes for Frontend Worker
+## Notes d'implémentation pour le frontend
 
-- The hero section should have high visual contrast and a clear focal point on the primary CTA ("List My Space Free")
-- "How It Works" works well as a horizontal 3-step flow on desktop, stacked vertically on mobile
-- The pricing section should make the 10% feel small — show the math (e.g., $300 rent → you keep $270)
-- Testimonials should look authentic, not polished — real names, real cities, real dollar amounts
-- FAQ should use an accordion/expandable pattern to keep the page scannable
-- Social proof stats in the hero should be prominent — these reduce friction before the CTA
-- The page should have two anchor points for "See How It Works": one nav link and one in-page CTA that scrolls to the How It Works section
+- Le hero doit mettre en avant le concept agentique — l'IA qui agit à la place du propriétaire
+- "Comment ça marche" : flux horizontal en 3 étapes sur desktop, empilé sur mobile
+- Les 6 asset cards peuvent être affichées en grille 2×3 ou carousel sur mobile
+- Le pricing doit rendre la commission de 15% intuitive — montrer le calcul (ex. : 300 € générés → vous gardez 255 €)
+- La section "Pourquoi Spurb" gagne à être présentée sous forme de 4 feature cards avec icônes
+- La FAQ doit utiliser un accordéon/expandable pour rester scannable
+- Le CTA final doit reprendre le message central : "Laissez votre IA travailler pendant que vous dormez"
+- Ton général : moderne, tech-forward, rassurant — pas de jargon financier complexe

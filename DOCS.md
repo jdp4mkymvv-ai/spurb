@@ -331,16 +331,18 @@ This avoids blocking on third-party marketplace automation before proving demand
 - 2026-05-19: Homepage copy and value proposition written — see `content/homepage.md`
 - 2026-05-19: Added billing product manifest, Postgres billing_products migration, and Stripe activation script for `spurb_monthly`
 - 2026-05-19: Attempted required post-push deployment verification, but `agent-browser` could not start because Chrome is not installed locally
+- 2026-05-19: **Repositioning** — `content/homepage.md` fully rewritten with new "OS for Idle Assets" / agentique positioning. Central pitch: "Dis à Spurb ce que tu possèdes. L'IA fait tout le reste." New pricing model: 15% commission on generated revenue only (no fixed fees). Scope expanded beyond garage/driveway to multi-asset (voiture, chambre, jardin, cave, serveur).
 
 ## Content Assets
 
 ### `content/homepage.md`
-Full homepage copywriting for the frontend worker to implement. Includes:
-- Hero headline + subheadline (benefit-driven, punchy)
-- How It Works (3-step flow: Sign Up → We List & Screen → You Get Paid)
-- Feature bullets (auto-listing, tenant screening, lease generation, payments, dashboard, cancel anytime)
-- Social proof bar (stats: $312 avg/mo, 4 days to first tenant, $0 upfront) + 3 testimonial placeholders
-- Pricing section (Free tier + Spurb Standard at 10% of rent + Spurb Pro at 8% coming soon)
-- FAQ (5 questions covering space types, screening, leases, payouts, and cancellation)
-- CTA copy: primary "List My Space Free", secondary "See How It Works"
+Full homepage copywriting for the frontend worker to implement. **Fully rewritten 2026-05-19** with new agentique positioning ("OS for Idle Assets"). Includes:
+- Hero: "Vos biens inutilisés rapportent de l'argent. Automatiquement." + subhead highlighting the AI agent + CTA "Commencer gratuitement"
+- Comment ça marche (3 étapes): Dites-nous ce que vous avez → L'IA déploie partout → L'argent arrive
+- Assets supportés (6 cards): Garage/allée/stockage, Voiture, Chambre/logement, Cave/débarras, Jardin/terrain, Compute/serveur
+- Pourquoi Spurb (4 differentiators): 100% IA zéro effort, multi-assets une plateforme, optimisation prix temps réel, contrats auto
+- Pricing: 15% commission sur revenus générés uniquement, zéro frais fixe
+- Social proof/vision: "Le futur appartient aux biens qui travaillent pour vous"
+- FAQ (7 questions) orientée IA et automatisation
+- CTA final: "Laissez votre IA travailler pendant que vous dormez"
 - SEO/meta copy and implementation notes for the frontend worker
