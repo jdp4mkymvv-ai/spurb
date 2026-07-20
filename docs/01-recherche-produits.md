@@ -6,8 +6,9 @@
 
 TrendTrack piste les boutiques Shopify qui montent : trafic, croissance, produits ajoutés, ads actives. Sa force : repérer **les boutiques qui gagnent déjà** plutôt que des produits en vrac.
 
-- Commencer par le **plan d'entrée de gamme** (~40-50 €/mois). Upgrader seulement quand une limite bloque réellement.
-- À vérifier avant de payer : filtre par pays (il nous faut FR/BE/CH), tri par croissance de trafic, visibilité des ads actives.
+- **Timing d'abonnement : pas avant le début de la recherche quotidienne** (fin de Phase 0). À 59 €/mois, chaque semaine non utilisée est perdue — les outils gratuits ci-dessous suffisent pour démarrer.
+- **Mensuel uniquement au début**, jamais d'engagement annuel avant d'avoir prouvé que l'outil apporte plus que les outils gratuits. Réévaluer après 1 mois.
+- À vérifier avant de payer : essai gratuit ou plan moins cher disponible, filtre par pays (il nous faut FR/BE/CH), tri par croissance de trafic, visibilité des ads actives.
 
 ### Compléments gratuits (à utiliser dès maintenant, même sans TrendTrack)
 

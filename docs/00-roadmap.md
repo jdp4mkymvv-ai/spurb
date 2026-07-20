@@ -10,7 +10,7 @@ Chaque phase a des **critères de passage** : on ne passe pas à la suivante tan
 
 - [ ] Vérifier que l'activité déclarée en autoentrepreneur couvre bien la **vente de marchandises (BIC)** — sinon modifier la déclaration sur autoentrepreneur.urssaf.fr
 - [ ] Ouvrir un **compte bancaire dédié** à l'activité (obligatoire au-delà de 10 000 € de CA 2 années de suite, mais indispensable dès le départ pour le suivi)
-- [ ] Prendre l'abonnement **TrendTrack** (voir comparatif `01-recherche-produits.md`) — commencer par le plan le moins cher, upgrader seulement si besoin
+- [ ] **TrendTrack : ne PAS s'abonner tout de suite** (59 €/mois). Commencer la recherche produit avec les outils gratuits (`01-recherche-produits.md` §1). S'abonner en mensuel (jamais en annuel au début) seulement quand les comptes sont prêts et que la recherche quotidienne démarre — puis réévaluer après 1 mois : si l'Ad Library suffit, résilier
 - [ ] Créer la boutique **Shopify** (essai gratuit puis plan Basic)
 - [ ] Créer le **Business Manager Meta** + compte publicitaire (le faire tôt : les comptes neufs sont fragiles, il faut les "chauffer")
 - [ ] Créer le compte **TikTok Ads Manager**
