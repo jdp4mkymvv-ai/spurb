@@ -4,3 +4,6 @@ date,produit,niche,source,score_sur_25,cpa_max_eur,budget_depense_eur,ventes,cpa
 2026-07-20,Poele 100% titane (ref titanoxfrance.com),cuisine/sante,TrendTrack MCP,20,12.00,0,0,,,,candidat,fiche produits/2026-07-poele-titane.md - marge a valider avant tout test
 2026-07-20,Gaine post-partum (ref bengka.fr),maman/post-partum,TrendTrack MCP,19,,,,,,,ecarte-provisoire,momentum plus faible que le top 3 - a re-evaluer si un test echoue
 2026-07-20,Oreiller cervical (ref somnilys.com),sommeil/sante,TrendTrack MCP,18,,,,,,,ecarte,categorie saturee - garde comme preuve que le marche FR paie 100e+ en sommeil
+2026-07-20,Duo confort chien: coussin apaisant + tapis rafraichissant (ref mrfluffyfriend.fr),animaux/chien,Pipeline TrendTrack complet (heatmap+clusters+audit saturation),24,12.00,0,0,,,,candidat-prioritaire,fiche produits/2026-07-duo-confort-chien.md - VALIDE par audit: 1 seul annonceur FR actif
+2026-07-20,Complements chien anti-demangeaisons (ref woofilab.com besti.fr),animaux/chien,Pipeline TrendTrack complet,,,,,,,,pipeline-phase-2,projet de MARQUE (marque blanche UE + reglementation) pas un test dropshipping - geants US pas encore en FR
+2026-07-20,Jouets/fontaine chat premium (ref pourtoimonchat.com),animaux/chat,Pipeline TrendTrack complet,,,,,,,,ecarte,audit saturation: TENDU - Feliway 130 ads + Chatinou entrant agressif 69 ads
