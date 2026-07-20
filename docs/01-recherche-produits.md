@@ -6,9 +6,17 @@
 
 TrendTrack piste les boutiques Shopify qui montent : trafic, croissance, produits ajoutés, ads actives. Sa force : repérer **les boutiques qui gagnent déjà** plutôt que des produits en vrac.
 
-- **Timing d'abonnement : pas avant le début de la recherche quotidienne** (fin de Phase 0). À 59 €/mois, chaque semaine non utilisée est perdue — les outils gratuits ci-dessous suffisent pour démarrer.
-- **Mensuel uniquement au début**, jamais d'engagement annuel avant d'avoir prouvé que l'outil apporte plus que les outils gratuits. Réévaluer après 1 mois.
-- À vérifier avant de payer : essai gratuit ou plan moins cher disponible, filtre par pays (il nous faut FR/BE/CH), tri par croissance de trafic, visibilité des ads actives.
+**Décision (2026-07-20) : outil retenu, plan Starter en mensuel.** Tarifs vérifiés sur trendtrack.io :
+
+| Plan | Mensuel | Contenu |
+|---|---|---|
+| **Starter** ✅ | $49 (~59 € TTC) | boutiques illimitées, accès ads/annonceurs limité |
+| Pro | $74 | ads/annonceurs illimités + API — seulement si le Starter bride réellement |
+
+- **Argument décisif : l'intégration MCP** — TrendTrack se connecte à Claude, ce qui permet de faire la recherche (boutiques, ads, annonceurs) directement en session avec l'assistant au lieu de tout faire à la main. Aucun concurrent connu ne l'offre.
+- Avant de payer : passer par l'accès gratuit du site pour voir l'interface, et installer l'**extension Chrome gratuite** (trafic estimé, CA, apps, thème de n'importe quelle boutique Shopify).
+- **Mensuel uniquement au début** malgré les -20 % en annuel : réévaluer après 1 mois d'usage réel.
+- Dès l'abonnement actif : **connecter le MCP TrendTrack à Claude** pour automatiser le process quotidien (§4).
 
 ### Compléments gratuits (à utiliser dès maintenant, même sans TrendTrack)
 
