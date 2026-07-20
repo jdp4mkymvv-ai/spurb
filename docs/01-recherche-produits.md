@@ -6,12 +6,15 @@
 
 TrendTrack piste les boutiques Shopify qui montent : trafic, croissance, produits ajoutés, ads actives. Sa force : repérer **les boutiques qui gagnent déjà** plutôt que des produits en vrac.
 
-**Décision (2026-07-20) : outil retenu, plan Starter en mensuel.** Tarifs vérifiés sur trendtrack.io :
+**Décision (2026-07-20) : outil retenu, plan Starter en mensuel.** Tarifs EUR TTC constatés sur la page de pricing :
 
 | Plan | Mensuel | Contenu |
 |---|---|---|
-| **Starter** ✅ | $49 (~59 € TTC) | boutiques illimitées, accès ads/annonceurs limité |
-| Pro | $74 | ads/annonceurs illimités + API — seulement si le Starter bride réellement |
+| **Starter** ✅ | 59 € | Shops illimité, BrandTracker ×2, 30 crédits mail, **API 10 000 crédits** (alimente le MCP), **pas d'accès Ads/Advertisers** |
+| Pro | 89 € | + Ads illimité, 1 000 advertisers, mail illimité, BrandTracker ×30 |
+| Business | 149 € | tout illimité — hors sujet à notre stade |
+
+**Pourquoi Starter malgré l'absence d'ads :** la brique irremplaçable est la découverte de boutiques (Shops illimité + MCP). La partie ad-spy a un substitut gratuit : la Meta Ad Library consultée manuellement dans le navigateur (étape 2 du process §4). Passer au Pro (+30 €/mois) seulement si, après 2-3 semaines d'usage réel, la vérification manuelle des ads devient le goulot d'étranglement du process quotidien.
 
 - **Argument décisif : l'intégration MCP** — TrendTrack se connecte à Claude, ce qui permet de faire la recherche (boutiques, ads, annonceurs) directement en session avec l'assistant au lieu de tout faire à la main. Aucun concurrent connu ne l'offre.
 - Avant de payer : passer par l'accès gratuit du site pour voir l'interface, et installer l'**extension Chrome gratuite** (trafic estimé, CA, apps, thème de n'importe quelle boutique Shopify).
